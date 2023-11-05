@@ -14,6 +14,6 @@ fn main() {
         let mut content = String::new();
         entry.read_to_string(&mut content).expect("read content");
         let path = entry.path().expect("get path");
-        eprintln!("{path:?} -> {content}");
+        println!("{path:?} -> {content}");
     }
 }
