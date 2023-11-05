@@ -1,0 +1,8 @@
+[package]
+name = "reproduce-tar-rs-bug"
+version = "0.0.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+tar = "=0.4.40"
