@@ -5,7 +5,11 @@ const ARCHIVE_CONTENT: &[u8] = include_bytes!("../work/archive.tar");
 
 fn main() {
     let mut archive = Archive::new(Cursor::new(ARCHIVE_CONTENT));
-    let entries = archive.entries().expect("read entries").map(Result::unwrap);
+    let entries = archive
+        .entries()
+        .expect("read entries")
+        .map(Result::unwrap)
+        .collect::<Vec<_>>();
     for mut entry in entries {
         let mut content = String::new();
         entry.read_to_string(&mut content).expect("read content");
